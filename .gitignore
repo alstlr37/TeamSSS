@@ -1,1 +1,5 @@
 Library/
+.vsconfig
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
+TeamSSS.sln

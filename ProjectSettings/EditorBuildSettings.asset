@@ -4,5 +4,32 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/1. Logo/1. Scene/LogoScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/2. MainMenu/1. Scene/MainMenu.unity
+    guid: 7b5b115ff782fc24caa7b633f6c2a6d5
+  - enabled: 1
+    path: Assets/5. Loading/1. Scene/LoadingScene.unity
+    guid: 5e276abf330751741bb4989e991962d0
+  - enabled: 1
+    path: Assets/4. LoadStart/1. Scene/LoadStart.unity
+    guid: a785b922f55a22b49996fcdf3b3d92f1
+  - enabled: 1
+    path: Assets/6. Town_InGame/1. Scene/Map1.unity
+    guid: 3862b1838bec8e64cba528b9ee85c901
+  - enabled: 1
+    path: Assets/6. Town_InGame/1. Scene/Map2.unity
+    guid: 275a29409308e634aa2aae331e6db8ba
+  - enabled: 1
+    path: Assets/6. Town_InGame/1. Scene/Map_City.unity
+    guid: addd9a4db4d74204682ed88e6575577a
+  - enabled: 1
+    path: Assets/3. NewStart/1. Scene/NewStart.unity
+    guid: 551ba689e7d9aba42864f1889eba25cc
+  - enabled: 1
+    path: Assets/6. Town_InGame/1. Scene/TownInGameScene.unity
+    guid: d76b6aa43af1a2a41b270a281c380e0b
   m_configObjects: {}
