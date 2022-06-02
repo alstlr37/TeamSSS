@@ -117,7 +117,7 @@ public class UltimateJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler
 		Custom
 	}
 	[Header( "Depreciated Variables" )]
-	public JoystickTouchSize joystickTouchSize = JoystickTouchSize.Custom;
+	public JoystickTouchSize joystickTouchSize = JoystickTouchSize.Default;
 	public float customSpacing_X = -10, customSpacing_Y = -10;
 	public float customTouchSize_X = -10, customTouchSize_Y = -10;
 	public float customTouchSizePos_X = -10, customTouchSizePos_Y = -10;
