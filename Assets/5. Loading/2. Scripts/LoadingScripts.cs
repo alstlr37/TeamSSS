@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class LoadingScripts : MonoBehaviour
 {
 	// 유저인터페이스를 연결하기 위한 변수
-	public GameObject playrUi; // 왜 유지시켜줘야하나
+	// public GameObject playrUi; // 왜 유지시켜줘야하나
 	//로딩(설명)Panel을 연결 하기위한 배열 
 	public GameObject[] exPnl;
 	//로딩 progress Text 컴포넌트를 연결하기 위한 변수 
@@ -19,7 +19,7 @@ public class LoadingScripts : MonoBehaviour
     {        
 		// 로딩(설명)Panel 렌덤으로 선택
 		exPnl [Random.Range (0, 2)].SetActive (true);  // 1
-		playrUi.SetActive (true);  
+		// playrUi.SetActive (true);  
         StartCoroutine (this.Loading());
     }
 
