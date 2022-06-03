@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Portal_City
+  - Portal_Map2
+  - Portal_Map1
   layers:
   - Default
   - TransparentFX
