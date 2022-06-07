@@ -60,11 +60,17 @@ public class NewStartButtonControl : MonoBehaviour
 
     public void Select()
     {
+        GameObject.Find("SoundManager").GetComponent<AudioSource>().clip = null;
         SceneManager.LoadScene("LoadingScene");
     }
 
     public void Go_Back()
     {
+        GameObject.Find("MainMenuCanvas").transform.Find("Menu1").gameObject.SetActive(true);
+        GameObject.Find("MainMenuCanvas").transform.Find("Menu2").gameObject.SetActive(true);
+        GameObject.Find("MainMenuCanvas").transform.Find("Menu3").gameObject.SetActive(true);
+        GameObject.Find("MainMenuCanvas").transform.Find("Menu4").gameObject.SetActive(true);
+        GameObject.Find("MainMenuCanvas").transform.Find("Text").gameObject.SetActive(true);
         SceneManager.LoadScene("MainMenu");
     }
 }

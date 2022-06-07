@@ -7,6 +7,11 @@ TagManager:
   - Portal_City
   - Portal_Map2
   - Portal_Map1
+  - MainMenu
+  - slSound
+  - tgSound
+  - objSound
+  - Menu3
   layers:
   - Default
   - TransparentFX

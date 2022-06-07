@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections;   
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,10 +15,22 @@ public class SoundManager : MonoBehaviour
     private AudioSource audio;
     public GameObject Sound;
     public GameObject PlaySoundBtn;
-    void Awake()
+
+    public static SoundManager instance;
+
+    private void Awake()
     {
-        audio = GetComponent<AudioSource>();
-        Debug.Assert(audio);
+        if (instance == null)
+        {
+            instance = this;
+            audio = GetComponent<AudioSource>();
+            PlayBackgroundMenu();
+            Debug.Assert(audio);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -29,6 +41,7 @@ public class SoundManager : MonoBehaviour
         //PlaySoundBtn.SetActive(true);
         AudioSet();
         DontDestroyOnLoad(this.gameObject);
+
     }
 
     // Update is called once per frame
@@ -57,24 +70,20 @@ public class SoundManager : MonoBehaviour
         SaveData();
     }
 
-    
-    // public void SoundUiOpen()
-    // {
-    //     Sound.SetActive(true);
-    //     PlaySoundBtn.SetActive(false);
-    // }
-
-    // public void SoundUiClose()
-    // {
-    //     Sound.SetActive(false);
-    //     PlaySoundBtn.SetActive(true);
-    // }
-
-
-    public void PlayBackground(int stage)
+    public void PlayBackgroundMenu()
     {
         // AudioSource의 사운드 연결
-        GetComponent<AudioSource>().clip = soundFile[stage-1];
+        GetComponent<AudioSource>().clip = soundFile[0];
+        // AudioSource 셋팅
+        AudioSet();
+        // 사운드 플레이. Mute 설정시 사운드 안나옴
+        GetComponent<AudioSource>().Play();
+    }
+
+    public void PlayBackgroundMap1()
+    {
+        // AudioSource의 사운드 연결
+        GetComponent<AudioSource>().clip = soundFile[1];
         // AudioSource 셋팅
         AudioSet();
         // 사운드 플레이. Mute 설정시 사운드 안나옴

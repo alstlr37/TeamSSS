@@ -27,6 +27,11 @@ public class LoadStartButtonControl : MonoBehaviour
 
     public void GoBack()
     {
+        GameObject.Find("MainMenuCanvas").transform.Find("Menu1").gameObject.SetActive(true);
+        GameObject.Find("MainMenuCanvas").transform.Find("Menu2").gameObject.SetActive(true);
+        GameObject.Find("MainMenuCanvas").transform.Find("Menu3").gameObject.SetActive(true);
+        GameObject.Find("MainMenuCanvas").transform.Find("Menu4").gameObject.SetActive(true);
+        GameObject.Find("MainMenuCanvas").transform.Find("Text").gameObject.SetActive(true);
         SceneManager.LoadScene("MainMenu");
     }
 

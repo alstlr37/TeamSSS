@@ -6,6 +6,12 @@ using UnityEngine.Video;
 
 public class MainMenuButtonControl : MonoBehaviour
 {
+    public GameObject Menu1;
+    public GameObject Menu2;
+    public GameObject Menu3;
+    public GameObject Menu4;
+    public GameObject Text;
+
     private static int MainMenuStartButton = 0;
     void Start()
     {
@@ -13,25 +19,38 @@ public class MainMenuButtonControl : MonoBehaviour
         {
             DestroyObject();
         }
+
+
     }
 
     public void DestroyObject()
     {
-        GameObject.Find("Canvas").transform.Find("DestroyButton").gameObject.SetActive(false);
+        GameObject.Find("MainMenuCanvas").transform.Find("DestroyButton").gameObject.SetActive(false);
 
-        GameObject.Find("Canvas").transform.Find("Menu1").gameObject.SetActive(true);
-        GameObject.Find("Canvas").transform.Find("Menu2").gameObject.SetActive(true);
-        GameObject.Find("Canvas").transform.Find("Menu3").gameObject.SetActive(true);
-        GameObject.Find("Canvas").transform.Find("Menu4").gameObject.SetActive(true);
+        Menu1.SetActive(true);
+        Menu2.SetActive(true);
+        Menu3.SetActive(true);
+        Menu4.SetActive(true);
+        Text.SetActive(true);
     }
     public void NewStart()
     {
+        Menu1.SetActive(false);
+        Menu2.SetActive(false);
+        Menu3.SetActive(false);
+        Menu4.SetActive(false);
+        Text.SetActive(false);
         MainMenuStartButton++;
         SceneManager.LoadScene("NewStart");
     }
 
     public void LoadStart()
     {
+        Menu1.SetActive(false);
+        Menu2.SetActive(false);
+        Menu3.SetActive(false);
+        Menu4.SetActive(false);
+        Text.SetActive(false);
         MainMenuStartButton++;
         SceneManager.LoadScene("LoadStart");
     }

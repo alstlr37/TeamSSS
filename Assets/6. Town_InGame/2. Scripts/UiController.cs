@@ -15,5 +15,7 @@ public class UiController : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f);
         ui.SetActive(true);
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayBackgroundMap1();
+
     }
 }

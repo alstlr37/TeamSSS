@@ -6,8 +6,10 @@ using UnityEngine.Video;
 
 public class LogoManager : MonoBehaviour
 {
-    public VideoPlayer video;
-    public VideoPlayer videoBG;
+    public GameObject BG;
+    public GameObject MainMenuCanvas;
+    public GameObject SoundManager;
+    public GameObject MainMenuButtonControl;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,14 @@ public class LogoManager : MonoBehaviour
     {
         yield return new WaitForSeconds(a);
 
-        DontDestroyOnLoad(videoBG);
+        DontDestroyOnLoad(BG);
+
+        MainMenuCanvas.SetActive(true);
+        SoundManager.SetActive(true);
+        MainMenuButtonControl.SetActive(true);
+        DontDestroyOnLoad(MainMenuCanvas);
+        DontDestroyOnLoad(SoundManager);
+        DontDestroyOnLoad(MainMenuButtonControl);
         SceneManager.LoadScene("MainMenu");
     }
 }

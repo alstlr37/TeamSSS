@@ -11,6 +11,7 @@ public class PlayerButtonControl : MonoBehaviour
     {
         foreach (GameObject B in btn)
         {
+            // 딱 버튼만 클릭되게함
             B.GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
         }
     }
