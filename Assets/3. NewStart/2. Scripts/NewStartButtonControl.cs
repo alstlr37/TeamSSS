@@ -6,8 +6,10 @@ using UnityEngine.Video;
 
 public class NewStartButtonControl : MonoBehaviour
 {
+    public Character character;
     public void Unit_Warrior()
     {
+        SelectJob.instance.currentCharacter = character;
         GameObject.Find("Canvas").transform.Find("Warrior").gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.Find("Assassin").gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.Find("Wizard").gameObject.SetActive(false);
@@ -16,6 +18,7 @@ public class NewStartButtonControl : MonoBehaviour
 
     public void Unit_Assassin()
     {
+        SelectJob.instance.currentCharacter = character;
         GameObject.Find("Canvas").transform.Find("Warrior").gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.Find("Assassin").gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.Find("Wizard").gameObject.SetActive(false);
@@ -24,6 +27,7 @@ public class NewStartButtonControl : MonoBehaviour
 
     public void Unit_Wizard()
     {
+        SelectJob.instance.currentCharacter = character;
         GameObject.Find("Canvas").transform.Find("Warrior").gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.Find("Assassin").gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.Find("Wizard").gameObject.SetActive(true);
@@ -32,6 +36,7 @@ public class NewStartButtonControl : MonoBehaviour
 
     public void Unit_Gunner()
     {
+        SelectJob.instance.currentCharacter = character;
         GameObject.Find("Canvas").transform.Find("Warrior").gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.Find("Assassin").gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.Find("Wizard").gameObject.SetActive(false);

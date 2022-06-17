@@ -30,9 +30,63 @@ public class LoadingScripts : MonoBehaviour
 		// 1초 정도는 화면에 설명을 뛰워주자 바로 게임으로 넘어가면 이상함 
 		yield return new WaitForSeconds(1.0f);
 
-		// 씬을 비동기방식으로 추가하자.
-		//AsyncOperation async = Application.LoadLevelAdditiveAsync ("scStage1");
-		AsyncOperation async = SceneManager.LoadSceneAsync("Map_City", LoadSceneMode.Additive);
+		AsyncOperation async;
+
+
+		GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+
+		if (Portal.SceneNum == 5)
+        {
+			if (Portal.PotalNum == 1)
+			{
+				async = SceneManager.LoadSceneAsync("Map1", LoadSceneMode.Additive);
+				GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(111.313f, 1.834176f, 27.24719f);
+			}
+
+			else
+			{
+				async = SceneManager.LoadSceneAsync("Map2", LoadSceneMode.Additive);
+				GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(228.3002f, 1.182065f, 71.38586f);
+			}
+		}
+
+		else if (Portal.SceneNum == 6)
+        {
+			if (Portal.PotalNum == 1)
+			{
+				async = SceneManager.LoadSceneAsync("Map_City", LoadSceneMode.Additive);
+				GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(60.88f, 5.092718f, 120.58f);
+			}
+
+			else
+			{
+				async = SceneManager.LoadSceneAsync("Map2", LoadSceneMode.Additive);
+				GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(144.6f, 0.2600501f, 120.46f);
+			}
+		}
+
+		else if (Portal.SceneNum == 7)
+		{
+			if (Portal.PotalNum == 1)
+			{
+				async = SceneManager.LoadSceneAsync("Map_City", LoadSceneMode.Additive);
+				GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(135.9472f, 0.09294939f, 132.6703f);
+			}
+
+			else
+			{
+				async = SceneManager.LoadSceneAsync("Map1", LoadSceneMode.Additive);
+				GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-13.79f, 0.3676873f, 103.01f);
+			}
+		}
+		else
+        {
+			async = SceneManager.LoadSceneAsync("Map_City", LoadSceneMode.Additive);
+			GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(56.02756f, 5.093f, 98.97034f);
+		}
+
+
 
 		//While 문으로 로딩진행사항을 표시해주자 
 		//현재 로딩중일때 
@@ -42,7 +96,7 @@ public class LoadingScripts : MonoBehaviour
 			float progress = async.progress * 100.0f;
 			LoadingBar.GetComponent<Image>().fillAmount = (progress / 100.0f);
 			LoadingBar.GetComponentInChildren<Text>().text = "Loading... " + progress.ToString() + "%";
-			Debug.Log(progress);
+
 			//  Mathf.RoundToInt는 float를 받아서 올림해서 인트형으로 반환 
 			int pRounded = Mathf.RoundToInt(progress);
 			//Text 컴포넌트에 text 요소를 다음과 같이 셋팅 
@@ -52,15 +106,67 @@ public class LoadingScripts : MonoBehaviour
 			yield return true;
 		}
 
+
 		LoadingBar.GetComponentInChildren<Text>().text = "Loading... 100%";
 		LoadingBar.GetComponent<Image>().fillAmount = 1f;
 
+
+		GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().constraints = ~(RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY);
+		GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider>().isTrigger = false;
+		GameObject.Find("InGameCanvas").transform.Find("InGame_Ui").transform.Find("JoyStick").gameObject.SetActive(true);
+
 		yield return new WaitForSeconds(3.0f);
-        // 로딩 완료후 설명서 비활성화 사운드 Ui 활성화 
-        exPnl [0].transform.parent.gameObject.SetActive (false);
+
+
+		// 로딩 완료후 설명서 비활성화 사운드 Ui 활성화 
+		exPnl [0].transform.parent.gameObject.SetActive (false);
 		LoadingBar.GetComponentInChildren<Text>().text = "";
 		LoadingBar.GetComponent<Image>().fillAmount = 0f;
 		LoadingMain.SetActive(false);
+
+		if (Portal.SceneNum == 5)
+		{
+			if (Portal.PotalNum == 1)
+			{
+				SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map1"));
+			}
+
+			else
+			{
+				SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map2"));
+			}
+		}
+
+		else if (Portal.SceneNum == 6)
+		{
+			if (Portal.PotalNum == 1)
+			{
+				SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map_City"));
+			}
+
+			else
+			{
+				SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map2"));
+			}
+		}
+
+		else if (Portal.SceneNum == 7)
+		{
+			if (Portal.PotalNum == 1)
+			{
+				SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map_City"));
+			}
+
+			else
+			{
+				SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map1"));
+			}
+		}
+		else
+		{
+			SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map_City"));
+		}
+
 		//GameObject.Find ("SoundCanvas").GetComponent<Canvas> ().enabled = true;
 	}
 }

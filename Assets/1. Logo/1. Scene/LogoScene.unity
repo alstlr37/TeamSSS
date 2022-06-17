@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -505,7 +505,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1863056878}
   - component: {fileID: 1863056877}
-  - component: {fileID: 1863056876}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -513,14 +512,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1863056876
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863056875}
-  m_Enabled: 1
 --- !u!20 &1863056877
 Camera:
   m_ObjectHideFlags: 0
@@ -1679,6 +1670,7 @@ GameObject:
   - component: {fileID: 3918649595498173326}
   - component: {fileID: 3918649595498173327}
   - component: {fileID: 3918649595498173324}
+  - component: {fileID: 3918649595498173323}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -1686,6 +1678,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!81 &3918649595498173323
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3918649595498173322}
+  m_Enabled: 1
 --- !u!23 &3918649595498173324
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3888,7 +3888,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

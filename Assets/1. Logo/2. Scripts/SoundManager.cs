@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(AudioSource))]
@@ -47,7 +48,7 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void SetSound()
@@ -66,8 +67,13 @@ public class SoundManager : MonoBehaviour
     public void SoundUiOpenClose(bool open)
     {
         Sound.SetActive(!open);
-        PlaySoundBtn.SetActive(open);
+        //PlaySoundBtn.SetActive(open);
         SaveData();
+
+        if (SceneManager.GetActiveScene().buildIndex > 4)
+        {
+            GameObject.FindGameObjectWithTag("Options").transform.Find("Menu").gameObject.SetActive(true);
+        }
     }
 
     public void PlayBackgroundMenu()

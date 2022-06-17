@@ -4,14 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Portal_City
-  - Portal_Map2
-  - Portal_Map1
   - MainMenu
-  - slSound
-  - tgSound
-  - objSound
-  - Menu3
+  - CameraArm
+  - foot
+  - InGameCanvas
+  - GameButtonManager
+  - GameButtonController
+  - EventSystem
+  - Rendering
+  - Job
+  - Potal1
+  - Potal2
+  - Options
+  - OptionChild
+  - Item
+  - InputNumber
+  - Portal_Map2
+  - map
   layers:
   - Default
   - TransparentFX
@@ -21,8 +30,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Item
+  - map
   - 
   - 
   - 
